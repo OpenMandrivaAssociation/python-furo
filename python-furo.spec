@@ -3,7 +3,7 @@
 
 Name:           python-%{pypi_name}
 Version:        2020.12.30
-Release:        1
+Release:        2
 Summary:        A clean customisable Sphinx documentation theme
 Group:          Development/Python
 License:        None
