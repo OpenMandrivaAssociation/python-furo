@@ -1,26 +1,35 @@
-# Created by pyp2rpm-3.3.5
 %global pypi_name furo
 
 Name:           python-%{pypi_name}
-Version:        2020.12.30
-Release:        2
+Version:        2023.9.10
+Release:        1
 Summary:        A clean customisable Sphinx documentation theme
 Group:          Development/Python
-License:        None
+License:        MIT
 URL:            https://github.com/pradyunsg/furo
-Source0:        %{pypi_name}-%{version}b24.tar.gz
+Source0:        https://github.com/pradyunsg/furo/archive/%{version}/furo-%{version}.tar.gz
+#Source0:        https://files.pythonhosted.org/packages/source/f/furo/furo-%{version}.tar.gz
+# Generated with ./prepare_vendor.sh
+Source1:	furo-%{version}-vendor.tar.xz
 BuildArch:      noarch
 
-BuildRequires:  python3-devel
-BuildRequires:  python3dist(setuptools)
+BuildRequires:  python
+BuildRequires:	python%{pyver}dist(pip)
+BuildRequires:	python%{pyver}dist(sphinx-theme-builder)
+BuildRequires:	python%{pyver}dist(nodeenv)
+BuildRequires:	nodejs
 
 %description
-
+A clean customisable Sphinx documentation theme
 
 %prep
-%autosetup -n %{pypi_name}-%{version}b24
+%autosetup -n %{pypi_name}-%{version} -a1
+sed -i -e "s,^node-version =.*,node-version = \"$(rpm -q --qf '%%{VERSION}' nodejs)\"," pyproject.toml
 
 %build
+export YARN_CACHE_FOLDER="$(pwd)/.package-cache"
+yarn install --offline
+nodeenv --node=system --prebuilt --clean-src "$(pwd)/.nodeenv"
 %py3_build
 
 %install
@@ -30,4 +39,4 @@ BuildRequires:  python3dist(setuptools)
 %license LICENSE
 %doc README.md
 %{python3_sitelib}/%{pypi_name}
-%{python3_sitelib}/%{pypi_name}-%{version}b24-py%{python3_version}.egg-info
+%{python3_sitelib}/%{pypi_name}*.*-info
