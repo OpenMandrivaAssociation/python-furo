@@ -18,6 +18,7 @@ BuildRequires:	python%{pyver}dist(pip)
 BuildRequires:	python%{pyver}dist(sphinx-theme-builder)
 BuildRequires:	python%{pyver}dist(nodeenv)
 BuildRequires:	nodejs
+BuildRequires:	yarn
 
 %description
 A clean customisable Sphinx documentation theme
