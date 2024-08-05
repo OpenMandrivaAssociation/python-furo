@@ -20,6 +20,9 @@ BuildRequires:	python%{pyver}dist(nodeenv)
 BuildRequires:	nodejs
 BuildRequires:	yarn
 
+%patchlist
+furo-2024.04.27-sphinx-8.patch
+
 %description
 A clean customisable Sphinx documentation theme
 
