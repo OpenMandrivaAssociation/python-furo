@@ -1,5 +1,7 @@
 #!/bin/bash
 
+sudo dnf install yarn
+
 PKG_VERSION=$(rpmspec -q --queryformat="%{VERSION}" *.spec --srpm)
 PKG_URL=$(cat *.spec |grep '^Source0:' | sed -e "s/Source0:[ ]*//g;s/%{version}/$PKG_VERSION/g")
 PKG_TARBALL=$(basename $PKG_URL)

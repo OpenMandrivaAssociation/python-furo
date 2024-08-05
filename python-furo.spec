@@ -1,7 +1,7 @@
 %global pypi_name furo
 
 Name:           python-%{pypi_name}
-Version:        2023.9.10
+Version:        2024.04.27
 Release:        1
 Summary:        A clean customisable Sphinx documentation theme
 Group:          Development/Python
