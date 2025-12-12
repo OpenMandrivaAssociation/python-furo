@@ -2,7 +2,7 @@
 
 Name:           python-%{pypi_name}
 Version:        2024.04.27
-Release:        1
+Release:        2
 Summary:        A clean customisable Sphinx documentation theme
 Group:          Development/Python
 License:        MIT
