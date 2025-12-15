@@ -1,12 +1,12 @@
-diff -up furo-2024.04.27/pyproject.toml.omv~ furo-2024.04.27/pyproject.toml
---- furo-2024.04.27/pyproject.toml.omv~	2024-08-05 22:48:08.998728767 +0200
-+++ furo-2024.04.27/pyproject.toml	2024-08-05 22:48:18.294826610 +0200
+diff -up furo-2025.9.25/pyproject.toml.1~ furo-2025.9.25/pyproject.toml
+--- furo-2025.9.25/pyproject.toml.1~	2025-07-18 21:00:05.295158900 +0200
++++ furo-2025.9.25/pyproject.toml	2025-12-15 03:52:35.564305253 +0100
 @@ -15,7 +15,7 @@ readme = "README.md"
  requires-python = ">=3.8"
  dependencies = [
    "beautifulsoup4",
--  "sphinx >= 6.0,<8.0",
-+  "sphinx >= 6.0,<9.0",
-   "sphinx-basic-ng",
+-  "sphinx >= 6.0,<9.0",
++  "sphinx >= 6.0,<10.0",
+   "sphinx-basic-ng >= 1.0.0.beta2",
    "pygments >= 2.7",
- ]
+   "accessible-pygments >= 0.0.5",

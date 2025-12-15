@@ -1,14 +1,14 @@
 %global pypi_name furo
 
 Name:           python-%{pypi_name}
-Version:        2024.04.27
-Release:        2
+Version:        2025.9.25
+Release:        1
 Summary:        A clean customisable Sphinx documentation theme
 Group:          Development/Python
 License:        MIT
 URL:            https://github.com/pradyunsg/furo
-Source0:        https://github.com/pradyunsg/furo/archive/%{version}/furo-%{version}.tar.gz
-#Source0:        https://files.pythonhosted.org/packages/source/f/furo/furo-%{version}.tar.gz
+#Source0:        https://github.com/pradyunsg/furo/archive/%{version}/furo-%{version}.tar.gz
+Source0:        https://files.pythonhosted.org/packages/source/f/furo/furo-%{version}.tar.gz
 # Generated with ./prepare_vendor.sh
 Source1:	furo-%{version}-vendor.tar.xz
 BuildArch:      noarch
