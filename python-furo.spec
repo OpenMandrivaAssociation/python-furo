@@ -1,13 +1,13 @@
-%global pypi_name furo
+%global module furo
 
-Name:           python-%{pypi_name}
-Version:        2025.9.25
+Name:           python-furo
+Version:        2025.12.19
 Release:        1
 Summary:        A clean customisable Sphinx documentation theme
 Group:          Development/Python
 License:        MIT
 URL:            https://github.com/pradyunsg/furo
-#Source0:        https://github.com/pradyunsg/furo/archive/%{version}/furo-%{version}.tar.gz
+#Source0:        https://github.com/pradyunsg/furo/archive/%%{version}/furo-%%{version}.tar.gz
 Source0:        https://files.pythonhosted.org/packages/source/f/furo/furo-%{version}.tar.gz
 # Generated with ./prepare_vendor.sh
 Source1:	furo-%{version}-vendor.tar.xz
@@ -20,14 +20,14 @@ BuildRequires:	python%{pyver}dist(nodeenv)
 BuildRequires:	nodejs
 BuildRequires:	yarn
 
-%patchlist
-furo-2024.04.27-sphinx-8.patch
+#%%patchlist
+#furo-2024.04.27-sphinx-8.patch
 
 %description
 A clean customisable Sphinx documentation theme
 
 %prep
-%autosetup -n %{pypi_name}-%{version} -a1
+%autosetup -n %{module}-%{version} -a1
 sed -i -e "s,^node-version =.*,node-version = \"$(rpm -q --qf '%%{VERSION}' nodejs)\"," pyproject.toml
 
 %build
@@ -39,8 +39,8 @@ nodeenv --node=system --prebuilt --clean-src "$(pwd)/.nodeenv"
 %install
 %py3_install
 
-%files -n python-%{pypi_name}
+%files -n python-%{module}
 %license LICENSE
 %doc README.md
-%{python3_sitelib}/%{pypi_name}
-%{python3_sitelib}/%{pypi_name}*.*-info
+%{python3_sitelib}/%{module}
+%{python3_sitelib}/%{module}*.*-info
