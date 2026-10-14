@@ -2,7 +2,7 @@
 
 Name:           python-furo
 Version:        2025.12.19
-Release:        1
+Release:        2
 Summary:        A clean customisable Sphinx documentation theme
 Group:          Development/Python
 License:        MIT
@@ -13,7 +13,7 @@ Source0:        https://files.pythonhosted.org/packages/source/f/furo/furo-%{ver
 Source1:	furo-%{version}-vendor.tar.xz
 BuildArch:      noarch
 
-BuildRequires:  python
+BuildRequires:  pkgconfig(python3)
 BuildRequires:	python%{pyver}dist(pip)
 BuildRequires:	python%{pyver}dist(sphinx-theme-builder)
 BuildRequires:	python%{pyver}dist(nodeenv)
